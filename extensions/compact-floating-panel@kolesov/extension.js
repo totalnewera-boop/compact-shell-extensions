@@ -270,13 +270,32 @@ class CompactFloatingPanel extends St.Widget {
         this._setOccluded(occluded);
     }
 
+    _setSubtreeReactive(actor, reactive) {
+        actor.reactive = reactive;
+        for (const child of actor.get_children?.() ?? [])
+            this._setSubtreeReactive(child, reactive);
+    }
+
     _setOccluded(occluded) {
         if (this._occluded === occluded)
             return;
         this._occluded = occluded;
-        this.reactive = !occluded;
-        this._content.reactive = !occluded;
-        this.opacity = occluded ? 0 : 255;
+
+        if (occluded) {
+            // opacity:0 мало — chrome и дочерние кнопки всё ещё ловят клики в углу
+            this._setSubtreeReactive(this, false);
+            this.opacity = 0;
+            this.hide();
+        } else {
+            this.show();
+            this.reactive = true;
+            this._content.reactive = true;
+            this._background.reactive = false;
+            this._setSubtreeReactive(this._content, true);
+            this._background.reactive = false;
+            if (this.opacity < 255)
+                this.opacity = 255;
+        }
     }
 
     _updateAnchorSide(x = this.x) {
