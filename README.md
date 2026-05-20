@@ -1,3 +1,6 @@
+<img width="1920" height="1080" alt="Screenshot From 2026-05-20 15-58-31" src="https://github.com/user-attachments/assets/c6ea3510-0101-4fb6-854a-c10e204548ed" />
+
+
 # Compact Shell — плавающая панель + стеклянный док
 
 Два расширения для **GNOME Shell 50** (Ubuntu 26.04 и аналоги):
