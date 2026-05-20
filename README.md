@@ -3,6 +3,8 @@
 
 # Compact Shell — плавающая панель + стеклянный док
 
+![Compact Shell на рабочем столе](docs/preview.png)
+
 Два расширения для **GNOME Shell 50** (Ubuntu 26.04 и аналоги):
 
 | UUID | Название |
@@ -13,7 +15,7 @@
 ## Быстрая установка (другой компьютер)
 
 ```bash
-git clone <URL-ВАШЕГО-РЕПО> compact-shell-extensions
+git clone https://github.com/totalnewera-boop/compact-shell-extensions.git
 cd compact-shell-extensions
 chmod +x install.sh
 ./install.sh
@@ -84,8 +86,11 @@ zip -r ../compact-shell.zip compact-floating-panel@kolesov compact-dock@kolesov
 ```
 compact-shell-extensions/
 ├── install.sh
+├── publish.sh
 ├── uninstall.sh
 ├── README.md
+├── docs/
+│   └── preview.png
 └── extensions/
     ├── compact-floating-panel@kolesov/
     └── compact-dock@kolesov/
