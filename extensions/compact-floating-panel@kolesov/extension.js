@@ -66,6 +66,7 @@ class CompactFloatingPanel extends St.Widget {
         this._occlusionIdle = 0;
         this._occlusionWindows = new Map();
         this._occluded = false;
+        this._userHidden = false;
 
         const handleIcon = new St.Icon({
             icon_name: 'view-grid-symbolic',
@@ -255,10 +256,12 @@ class CompactFloatingPanel extends St.Widget {
     }
 
     _updateOcclusion() {
-        if (!this.visible) {
-            this._occluded = false;
+        // Скрыто ПКМ пользователем — не показываем снова
+        if (this._userHidden)
             return;
-        }
+        // Скрыто по другой причине (не occlusion) — не трогаем
+        if (!this.visible && !this._occluded)
+            return;
 
         if (OVERVIEW.visible || this._openMenus > 0) {
             this._setOccluded(false);
@@ -293,8 +296,8 @@ class CompactFloatingPanel extends St.Widget {
             this._background.reactive = false;
             this._setSubtreeReactive(this._content, true);
             this._background.reactive = false;
-            if (this.opacity < 255)
-                this.opacity = 255;
+            this.opacity = 255;
+            this._enforceCompactMode();
         }
     }
 
@@ -393,10 +396,14 @@ class CompactFloatingPanel extends St.Widget {
             return Clutter.EVENT_STOP;
         }
         if (btn === 3) {
-            this.visible = false;
+            this._userHidden = true;
+            this._occluded = false;
+            this.hide();
             GLib.timeout_add(GLib.PRIORITY_DEFAULT, 5000, () => {
-                if (!OVERVIEW.visible)
+                if (!OVERVIEW.visible) {
+                    this._userHidden = false;
                     this._showPill();
+                }
                 return GLib.SOURCE_REMOVE;
             });
             return Clutter.EVENT_STOP;
@@ -422,6 +429,7 @@ class CompactFloatingPanel extends St.Widget {
         this._enforceCompactMode();
         this._snapToSavedOrCorner();
         this._occluded = false;
+        this._userHidden = false;
         this.opacity = 0;
         this.show();
         this.ease({

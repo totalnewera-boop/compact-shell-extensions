@@ -4,6 +4,6 @@
   "uuid": "compact-floating-panel@kolesov",
   "shell-version": ["50"],
   "settings-schema": "org.gnome.shell.extensions.compact-floating-panel",
-  "version": 22,
+  "version": 23,
   "session-modes": ["unlock-dialog", "user"]
 }
