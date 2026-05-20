@@ -1,0 +1,7 @@
+/* Цвет фона задаётся из extension.js (gsettings background-alpha) */
+#dashtodockContainer #dash.cfd-dash .dash-background,
+#dashtodockContainer #dash.cfd-dash .dash-background.cfd-glass {
+    border: none;
+    box-shadow: none;
+    outline: none;
+}

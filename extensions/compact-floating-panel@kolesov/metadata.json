@@ -1,0 +1,9 @@
+{
+  "name": "Compact Floating Panel",
+  "description": "Compact floating panel widget for GNOME Shell 50.",
+  "uuid": "compact-floating-panel@kolesov",
+  "shell-version": ["50"],
+  "settings-schema": "org.gnome.shell.extensions.compact-floating-panel",
+  "version": 21,
+  "session-modes": ["unlock-dialog", "user"]
+}

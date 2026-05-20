@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist gettext-domain="compact-dock@kolesov">
+  <schema id="org.gnome.shell.extensions.compact-dock"
+          path="/org/gnome/shell/extensions/compact-dock/">
+    <key name="blur-enabled" type="b">
+      <default>true</default>
+      <summary>Enable blur on dock background</summary>
+    </key>
+    <key name="sigma" type="i">
+      <default>10</default>
+      <summary>Blur radius (sigma)</summary>
+    </key>
+    <key name="background-alpha" type="d">
+      <default>0.15</default>
+      <summary>Dark tint opacity 0–1 (lower=more transparent glass, e.g. 0.15)</summary>
+    </key>
+    <key name="border-alpha" type="d">
+      <default>0</default>
+      <summary>Dark edge line opacity (0=off, avoids white blur halo)</summary>
+    </key>
+    <key name="unblur-in-overview" type="b">
+      <default>false</default>
+      <summary>Disable blur while Activities overview is open</summary>
+    </key>
+    <key name="sync-dock-opacity" type="b">
+      <default>true</default>
+      <summary>Set Ubuntu Dock background opacity to 0 while active</summary>
+    </key>
+  </schema>
+</schemalist>

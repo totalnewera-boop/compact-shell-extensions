@@ -1,0 +1,137 @@
+/* Корневой контейнер — без фона и blur */
+#CompactFloatingPanel.cfp-root {
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+#CompactFloatingPanel.horizontal {
+    min-height: 32px;
+}
+
+/* Только задний фон: прозрачность + blur */
+#CompactFloatingPanel .cfp-background {
+    border-radius: 16px;
+    border: none;
+    box-shadow: none;
+    outline: none;
+}
+
+/* Кнопки и текст — чёткие, без размытия */
+#CompactFloatingPanel .cfp-content {
+    spacing: 2px;
+    padding: 3px 10px;
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+#CompactFloatingPanel .cfp-content.horizontal {
+    height: 32px;
+    min-height: 32px;
+}
+
+#CompactFloatingPanel .cfp-hit-target {
+    min-height: 26px;
+    max-height: 26px;
+    border-radius: 8px;
+    border: none;
+    box-shadow: none;
+    background-color: transparent;
+    transition-duration: 120ms;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+#CompactFloatingPanel .cfp-hit-target:hover,
+#CompactFloatingPanel .cfp-hit-target:active,
+#CompactFloatingPanel .cfp-hit-target:checked,
+#CompactFloatingPanel .cfp-segment:hover,
+#CompactFloatingPanel .cfp-segment:active,
+#CompactFloatingPanel .cfp-segment:checked {
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+#CompactFloatingPanel .cfp-segment {
+    min-height: 26px;
+    max-height: 26px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 8px;
+    padding-right: 8px;
+    border-radius: 8px;
+    border: none;
+    box-shadow: none;
+    background-color: transparent;
+    transition-duration: 120ms;
+}
+
+#CompactFloatingPanel .date-btn {
+    min-width: 0;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+#CompactFloatingPanel .date-btn StLabel {
+    font-weight: 500;
+    font-size: 0.92em;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    color: #ffffff;
+}
+
+#CompactFloatingPanel .language-btn {
+    width: 2.4em;
+    min-width: 2.4em;
+    max-width: 2.4em;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+#CompactFloatingPanel .language-btn StLabel {
+    font-size: 0.9em;
+    font-weight: 600;
+    text-transform: lowercase;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    color: #ffffff;
+}
+
+#CompactFloatingPanel .quick-tray {
+    spacing: 0;
+    padding: 0 2px;
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+#CompactFloatingPanel .cfp-icon-slot {
+    padding-left: 6px;
+    padding-right: 6px;
+    min-width: 26px;
+}
+
+#CompactFloatingPanel .handle {
+    padding-left: 6px;
+    padding-right: 6px;
+    min-width: 26px;
+}
+
+#CompactFloatingPanel .system-status-icon {
+    icon-size: 16px;
+    width: 16px;
+    height: 16px;
+    padding: 0;
+    margin: 0;
+    -st-icon-style: symbolic;
+    color: #ffffff;
+}
+
+#CompactFloatingPanel .status-label {
+    font-size: 0.85em;
+    padding: 0;
+    margin: 0;
+    color: #ffffff;
+}

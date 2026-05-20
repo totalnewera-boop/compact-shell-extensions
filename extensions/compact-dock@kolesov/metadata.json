@@ -1,0 +1,9 @@
+{
+  "name": "Compact Dock",
+  "description": "Glass blur background for Ubuntu Dock (Dash to Dock).",
+  "uuid": "compact-dock@kolesov",
+  "shell-version": ["50"],
+  "settings-schema": "org.gnome.shell.extensions.compact-dock",
+  "version": 4,
+  "session-modes": ["unlock-dialog", "user"]
+}
